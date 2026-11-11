@@ -1106,6 +1106,30 @@ button .arrow {
  .contract-final-cta{padding:54px 0}
 }
 @media(max-width:420px){.arch-gallery{height:310px;padding:18px 0 12px}}
+@media(max-width:600px){
+ .contract-perks,.contract-steps,.contract-scope{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  margin:0 -17px;
+  padding:2px 24px 12px;
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:24px;
+  scroll-padding-right:24px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+ }
+ .contract-perk,.contract-step,.contract-scope-card{
+  flex:0 0 84%;
+  min-width:0;
+  scroll-snap-align:start;
+  scroll-margin-left:0;
+ }
+ .contract-perk{min-height:215px}
+ .contract-step{min-height:215px;padding:22px;border:1px solid var(--line);border-radius:6px;background:#fff}
+ .contract-scope-card{min-height:0}
+ .contract-perks::-webkit-scrollbar,.contract-steps::-webkit-scrollbar,.contract-scope::-webkit-scrollbar{height:4px}
+}
 @media(prefers-reduced-motion:reduce){.arch-card,.arch-caption,.portfolio-control{transition:none!important}}
 </style>
 </head>
