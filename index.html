@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" id="top">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1041,12 +1041,24 @@ button .arrow {
 .contract-pricing-badge{display:inline-flex;padding:6px 12px;border-radius:999px;background:#f0f0ee;font-size:11px;font-weight:650}
 .contract-pricing-summary h3{margin:0 0 7px;font-size:25px;font-weight:650;letter-spacing:-.04em;line-height:1.15}
 .contract-pricing-summary p{margin:0;color:#858585;font-size:13px;line-height:1.55}
+.contract-pricing-original{display:block;margin:0 0 3px;color:#999;font-size:14px}
+.contract-pricing-original[hidden]{display:none}
 .contract-pricing-amount{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
 .contract-pricing-amount span{color:#777;font-size:15px}
 .contract-pricing-amount strong{font-size:clamp(34px,4vw,45px);font-weight:700;letter-spacing:-.06em;line-height:1.1}
 .contract-pricing-period{margin-top:3px!important;font-size:12px!important}
+.contract-voucher{width:100%}
+.contract-voucher label{display:block;margin-bottom:7px;color:#555;font-size:11px;font-weight:650}
+.contract-voucher input{width:100%;min-height:44px;padding:0 13px;border:1px solid #dededb;border-radius:5px;background:#fff;color:#171717;font-size:13px;outline:none;transition:border-color .2s,box-shadow .2s}
+.contract-voucher input:focus{border-color:#8a8a84;box-shadow:0 0 0 3px #1717170b}
+.contract-voucher input[aria-invalid="true"]{border-color:#b96855}
+.contract-voucher-message{min-height:16px;margin-top:7px!important;color:#858585!important;font-size:10px!important}
+.contract-voucher-message:empty{display:none}
+.contract-voucher-message.is-valid{color:#39796c!important}
+.contract-voucher-message.is-invalid{color:#a74d3c!important}
 .contract-pricing-button{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;min-height:48px;padding:0 8px 0 20px;border-radius:999px;background:#171717;color:#fff;text-decoration:none;font-size:13px;font-weight:650;transition:transform .2s,background .2s}
-.contract-pricing-button span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:#171717;font-size:18px}
+.contract-pricing-button .contract-pricing-arrow{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#fff;color:#171717;font-size:18px}
+.contract-pricing-cta-label{flex:1}
 .contract-pricing-button:hover{transform:translateY(-2px);background:#333}
 .contract-pricing-help{display:flex;flex-direction:column;align-items:center;gap:8px;margin:22px auto 0;text-align:center}
 .contract-pricing-help p{margin:0;color:#858585;font-size:13px}
@@ -1132,6 +1144,20 @@ button .arrow {
 }
 @media(prefers-reduced-motion:reduce){.arch-card,.arch-caption,.portfolio-control{transition:none!important}}
 </style>
+<style id="contract-testimonials-styles">
+#contractTestimonials{padding:58px 0 72px;background:#f7f7f6;overflow:hidden}
+#contractTestimonials .contract-testimonial-heading{max-width:680px;margin:0 auto 24px;text-align:center}
+#contractTestimonials .contract-testimonial-gallery{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:13px;overflow-x:auto;overflow-y:hidden;padding:2px 4px 14px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+#contractTestimonials .sp-testimonial-slot{flex:0 0 clamp(180px,18vw,230px);min-width:0;padding:9px;border:1px solid #e7e5e3;border-radius:9px;background:#fff;box-shadow:0 10px 32px #17171708;scroll-snap-align:start}
+#contractTestimonials .sp-testimonial-frame.is-image{display:block;min-height:0;aspect-ratio:auto;overflow:hidden;padding:0;border-radius:6px;background:transparent}
+#contractTestimonials .sp-testimonial-frame.is-image:before{display:none}
+#contractTestimonials .sp-testimonial-image{display:block;width:100%;height:auto;object-fit:contain;border-radius:6px}
+@media(max-width:760px){#contractTestimonials{padding:54px 0 62px}}
+@media(max-width:600px){
+ #contractTestimonials .contract-testimonial-gallery{gap:12px;margin:0 -17px;padding:2px 24px 14px;scroll-padding-left:24px;scroll-padding-right:24px}
+ #contractTestimonials .sp-testimonial-slot{flex-basis:60%}
+}
+</style>
 </head>
 <body id="home">
 <header class="wrap nav">
@@ -1168,15 +1194,15 @@ button .arrow {
             <a class="nav-menu-item" href="https://creativeinstd.github.io/marketplace/">Desain Marketplace</a>
             <a class="nav-menu-item" href="https://creativeinstd.github.io/kontrakdesainer">Kontrak Desainer</a>
             <a class="nav-menu-item" href="https://creativeinstd.github.io/logo">Logo</a>
-            <span class="nav-menu-item">Label/Sticker</span>
-            <span class="nav-menu-item">Poster</span>
-            <span class="nav-menu-item">Banner</span>
-            <span class="nav-menu-item">Flyer</span>
-            <span class="nav-menu-item">Packaging</span>
-            <span class="nav-menu-item">Menu</span>
-            <span class="nav-menu-item">Undangan/Ucapan</span>
-            <span class="nav-menu-item">Digital Imaging</span>
-            <span class="nav-menu-item">Custom Desain</span>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/labelsticker">Label/Sticker</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/poster">Poster</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/banner">Banner</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/flyer">Flyer</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/packaging">Packaging</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/menu">Menu</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/undangan">Undangan/Ucapan</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/digital">Digital Imaging</a>
+            <a class="nav-menu-item" href="https://creativeinstd.github.io/custom">Custom Desain</a>
           </div>
         </div>
       </div>
@@ -1336,16 +1362,22 @@ button .arrow {
           </div>
           <div class="contract-pricing-divider" aria-hidden="true"></div>
           <div class="contract-pricing-summary">
-            <span class="contract-pricing-badge">Layanan 30 hari</span>
+            <span class="contract-pricing-badge" id="contractPricingBadge">Layanan 30 hari</span>
             <div>
               <h3>Kontrak Desainer</h3>
               <p>Partner desain bulanan untuk kebutuhan visual brand kamu.</p>
             </div>
             <div>
-              <div class="contract-pricing-amount"><span>Rp</span><strong>1.000.000</strong></div>
+              <del class="contract-pricing-original" id="contractOriginalPrice" hidden>Rp 1.500.000</del>
+              <div class="contract-pricing-amount"><span>Rp</span><strong id="contractPriceAmount">1.500.000</strong></div>
               <p class="contract-pricing-period">per bulan</p>
             </div>
-            <a class="contract-pricing-button" href="https://wa.me/6282341380342?text=Halo%20Creativein.std%2C%20saya%20tertarik%20dengan%20Kontrak%20Desainer%20bulanan.%20Boleh%20minta%20detail%20cara%20mulainya%3F" target="_blank" rel="noopener">Mulai kontrak <span aria-hidden="true">↗</span></a>
+            <div class="contract-voucher">
+              <label for="contractVoucherCode">Kode voucher</label>
+              <input id="contractVoucherCode" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Masukkan kode voucher" aria-describedby="contractVoucherMessage">
+              <p class="contract-voucher-message" id="contractVoucherMessage" aria-live="polite"></p>
+            </div>
+            <a class="contract-pricing-button" id="contractPricingCTA" href="https://wa.me/6282341380342?text=Halo%20Creativein.std%2C%20saya%20tertarik%20dengan%20Kontrak%20Desainer%20bulanan.%20Boleh%20minta%20detail%20cara%20mulainya%3F" target="_blank" rel="noopener"><span class="contract-pricing-cta-label">Mulai kontrak</span><span class="contract-pricing-arrow" aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>
@@ -1355,6 +1387,52 @@ button .arrow {
       </div>
     </div>
   </section>
+  <script id="contract-voucher-interaction">
+  (() => {
+    const voucherInput=document.getElementById('contractVoucherCode');
+    const message=document.getElementById('contractVoucherMessage');
+    const originalPrice=document.getElementById('contractOriginalPrice');
+    const currentPrice=document.getElementById('contractPriceAmount');
+    const badge=document.getElementById('contractPricingBadge');
+    const cta=document.getElementById('contractPricingCTA');
+    const ctaLabel=cta&&cta.querySelector('.contract-pricing-cta-label');
+    if(!voucherInput||!message||!originalPrice||!currentPrice||!badge||!cta||!ctaLabel)return;
+
+    const regularPrice='1.500.000';
+    const discountedPrice='1.000.000';
+    const defaultMessage='Halo Creativein.std, saya tertarik dengan Kontrak Desainer bulanan. Boleh minta detail cara mulainya?';
+    const voucherMessage='Halo Creativein.std, saya ingin memulai Kontrak Desainer bulanan dengan kode voucher promoterbatas seharga Rp1.000.000.';
+
+    function updateVoucher(){
+      const enteredCode=voucherInput.value.trim().toLowerCase();
+      const hasCode=enteredCode.length>0;
+      const isValid=enteredCode==='promoterbatas';
+      currentPrice.textContent=isValid?discountedPrice:regularPrice;
+      originalPrice.hidden=!isValid;
+      badge.textContent=isValid?'Voucher promoterbatas aktif':'Layanan 30 hari';
+      message.classList.toggle('is-valid',isValid);
+      message.classList.toggle('is-invalid',hasCode&&!isValid);
+      voucherInput.setAttribute('aria-invalid',String(hasCode&&!isValid));
+
+      if(isValid){
+        message.textContent='Kode promoterbatas aktif — hemat Rp500.000.';
+        ctaLabel.textContent='Gunakan voucher';
+        cta.href='https://wa.me/6282341380342?text='+encodeURIComponent(voucherMessage);
+      }else if(hasCode){
+        message.textContent='Kode voucher belum cocok. Periksa kembali penulisannya.';
+        ctaLabel.textContent='Mulai kontrak';
+        cta.href='https://wa.me/6282341380342?text='+encodeURIComponent(defaultMessage);
+      }else{
+        message.textContent='';
+        ctaLabel.textContent='Mulai kontrak';
+        cta.href='https://wa.me/6282341380342?text='+encodeURIComponent(defaultMessage);
+      }
+    }
+
+    voucherInput.addEventListener('input',updateVoucher);
+    updateVoucher();
+  })();
+  </script>
 
   <section class="portfolio-section" id="portfolio">
     <div class="wrap">
@@ -1385,6 +1463,46 @@ button .arrow {
       <div class="portfolio-foot">
         <p>Setiap karya punya tujuan, karakter, dan pendekatan visual yang berbeda.</p>
         <a class="portfolio-link" href="https://creativeinstd.lynk.id/p/portofolio-creativeinstd" target="_blank" rel="noopener">Lihat Porto<span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-testimonials" id="contractTestimonials" aria-labelledby="contractTestimonialsTitle">
+    <div class="wrap">
+      <div class="contract-testimonial-heading">
+        <h2 id="contractTestimonialsTitle">Cerita dari klien.</h2>
+      </div>
+      <div class="contract-testimonial-gallery" role="group" aria-label="Tempat gambar testimoni klien">
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1B0cCmWIY3rGL5gfUFZZ924NHH_RwQKAz&amp;sz=w1200" alt="Foto testimoni klien 01" loading="lazy">
+          </div>
+        </article>
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1NdzdAC5RDDif6oTYdL7WT2gpW6VqrbFP&amp;sz=w1200" alt="Foto testimoni klien 02" loading="lazy">
+          </div>
+        </article>
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1jM7A4ZrMoYKaV_oLNEIkA2orfgPwHOMH&amp;sz=w1200" alt="Foto testimoni klien 03" loading="lazy">
+          </div>
+        </article>
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1YzGbafNFoP51BQC5wK2UORhiLE5OsEqK&amp;sz=w1200" alt="Foto testimoni klien 04" loading="lazy">
+          </div>
+        </article>
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1TJ8yXt6X0ieOcUiqfEj-sy6KWt1i419K&amp;sz=w1200" alt="Foto testimoni klien 05" loading="lazy">
+          </div>
+        </article>
+        <article class="sp-testimonial-slot">
+          <div class="sp-testimonial-frame is-image">
+            <img class="sp-testimonial-image" src="https://drive.google.com/thumbnail?id=1jLyzW3gQDt7z1J4tDlaZ3qlQWyq4S6cD&amp;sz=w1200" alt="Foto testimoni klien 06" loading="lazy">
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1479,8 +1597,8 @@ button .arrow {
   <div class="footer-top">
     <div class="footer-brand"><a class="brand" href="https://creativeinstd.lynk.id/p/Home-creativeinstd" aria-label="Creativein.std beranda" onclick="return false;" aria-disabled="true"><img class="brand-logo" src="https://raw.githubusercontent.com/creativeinstd/Images/main/Logo.png" alt="Creativein.std"></a><p>Creative partner untuk membantu brand tampil lebih jelas, konsisten, dan bermakna.</p></div>
     <div class="footer-col"><b>Explore</b><a href="https://creativeinstd.lynk.id/p/creativeinstd-tentang-kami">Tentang kami</a><a href="https://creativeinstd.lynk.id/p/portofolio-creativeinstd">Portofolio</a><a href="https://drive.google.com/drive/folders/1kd8nH9XGtYQ-xiGMK_0A-SP0-tdWE2-L?usp=share_link" target="_blank" rel="noopener">Certificate</a></div>
-    <div class="footer-col"><b>Services</b><a href="https://creativeinstd.lynk.id/p/kelolasosmed">Kelola sosial media</a><a href="https://creativeinstd.github.io/kontrakdesainer">Kontrak desainer</a><a href="https://creativeinstd.github.io/marketplace/">Marketplace desain</a><a href="https://creativeinstd.github.io/logo">Logo</a><a class="footer-all-services" style="display:block;font-size:12px;margin-top:10px;color:#555" href="" onclick="return false;" aria-disabled="true">Semua layanan</a></div>
-    <div class="footer-col"><b>Start here</b><a href="https://creativeinstd.lynk.id/p/kontak-creativeinstd">Diskusikan proyek</a><a href="#home">Kembali ke atas ↑</a></div>
+    <div class="footer-col"><b>Services</b><a href="https://creativeinstd.lynk.id/p/kelolasosmed">Kelola sosial media</a><a href="https://creativeinstd.github.io/kontrakdesainer">Kontrak desainer</a><a href="https://creativeinstd.github.io/marketplace/">Marketplace desain</a><a href="https://creativeinstd.github.io/logo">Logo</a><a href="https://wa.me/c/6282341380342" target="_blank" rel="noopener noreferrer">Semua layanan</a></div>
+    <div class="footer-col"><b>Start here</b><a href="https://creativeinstd.lynk.id/p/kontak-creativeinstd">Diskusikan proyek</a><a href="#top">Kembali ke atas ↑</a></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Creativein.std. All rights reserved.</span></div>
 </footer>
@@ -1526,6 +1644,54 @@ button .arrow {
   }catch(error){
     console.warn('Instagram portfolio could not be loaded.',error);
   }
+})();
+</script>
+<script id="contract-testimonial-autoplay">
+(() => {
+  const section=document.getElementById('contractTestimonials');
+  const track=section&&section.querySelector('.contract-testimonial-gallery');
+  if(!section||!track)return;
+  const cards=Array.from(track.querySelectorAll('.sp-testimonial-slot'));
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(cards.length<2)return;
+
+  let sectionVisible=false;
+  let userInteracted=false;
+  let pointerHover=false;
+  let timer=null;
+  const canAutoplay=()=>sectionVisible&&!userInteracted&&!pointerHover&&!reducedMotion.matches&&
+    document.visibilityState==='visible'&&track.scrollWidth-track.clientWidth>8;
+  const stop=()=>{if(timer!==null){window.clearTimeout(timer);timer=null;}};
+  const advance=()=>{
+    timer=null;
+    if(!canAutoplay())return;
+    const maxScroll=track.scrollWidth-track.clientWidth;
+    if(track.scrollLeft>=maxScroll-3)return;
+    const styles=window.getComputedStyle(track);
+    const gap=parseFloat(styles.columnGap||styles.gap)||0;
+    const step=cards[0].getBoundingClientRect().width+gap;
+    track.scrollTo({left:Math.min(maxScroll,track.scrollLeft+step),behavior:'smooth'});
+    timer=window.setTimeout(advance,2700);
+  };
+  const schedule=()=>{stop();if(canAutoplay())timer=window.setTimeout(advance,900);};
+  const observer=new IntersectionObserver(entries=>{
+    sectionVisible=entries.some(entry=>entry.isIntersecting);
+    if(sectionVisible)schedule();else stop();
+  },{threshold:.2});
+  observer.observe(section);
+  const pauseForInteraction=()=>{userInteracted=true;stop();};
+  track.addEventListener('pointerdown',pauseForInteraction,{passive:true});
+  track.addEventListener('touchstart',pauseForInteraction,{passive:true});
+  track.addEventListener('wheel',pauseForInteraction,{passive:true});
+  track.addEventListener('focusin',pauseForInteraction);
+  track.addEventListener('keydown',pauseForInteraction);
+  if(window.matchMedia('(hover: hover)').matches){
+    track.addEventListener('pointerenter',()=>{pointerHover=true;stop();});
+    track.addEventListener('pointerleave',()=>{pointerHover=false;schedule();});
+  }
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')schedule();else stop();});
+  reducedMotion.addEventListener?.('change',schedule);
+  window.addEventListener('resize',schedule,{passive:true});
 })();
 </script>
 </body>
